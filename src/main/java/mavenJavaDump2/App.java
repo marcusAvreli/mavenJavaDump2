@@ -10,25 +10,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.LoggerContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-//import LoggerContext
 
-
-
-
-
-/**
- * Hello world!
- *
- */
-public class App 
-{	public static String Log4JPath = null;
+public class App {
+	public static String Log4JPath = null;
 	private static final Logger logger = LoggerFactory.getLogger(App.class);
-	
-	public static void main(String[] args) {
-		initApp();     
-	    logger.info("APP_STARTED");
-	    logger.info("APP_FINISHED");
 
+	public static void main(String[] args) {
+		initApp();
+		logger.info("APP_STARTED");
+		logger.info("APP_FINISHED");
 	}
 
 	public static String getLog4JPath() {
@@ -64,7 +54,7 @@ public class App
 	}
 
 	private static void loadLog4j() {
-        LoggerContext context  = (LoggerContext)LogManager.getContext(false);
-        context.setConfigLocation(new File(getLog4JPath()).toURI());
+		LoggerContext context = (LoggerContext) LogManager.getContext(false);
+		context.setConfigLocation(new File(getLog4JPath()).toURI());
 	}
 }
